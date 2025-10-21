@@ -7,11 +7,17 @@
 
 .footer-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  gap: 30px;
+  align-items: flex-start; /* ✅ Đảm bảo các cột bắt đầu từ cùng một hàng */
+  gap: 40px; /* ✅ Khoảng cách giữa các cột */
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
+  flex-wrap: wrap; /* ✅ Đảm bảo responsive trên màn nhỏ */
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
 }
 
 .footer-section h3, .footer-section h4 {
@@ -21,7 +27,7 @@
 
 .footer-section p, 
 .footer-section ul, 
-.footer-section li, 
+.footer-section li,
 .footer-section a {
   font-size: 14px;
   color: #555;

@@ -2,6 +2,9 @@ import "./HomePage.css";
 import { Link } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar.jsx";
 import Footer from "../../Components/Footer/Footer.jsx";
+import sap1 from "../../assets/sappage/sap1.jpeg";
+import sap2 from "../../assets/sappage/sap2.jpeg";
+import sap3 from "../../assets/sappage/sap3.png";
 
 const HomePage = () => {
   return (
@@ -26,17 +29,17 @@ const HomePage = () => {
       <section className="about">
         <div className="about-images">
           <img
-            src="https://product.hstatic.net/200000210779/product/24672a39dbee26a5ec518509723f60bc_38a435d6405d4b7095b2886149d749cf.jpg"
+            src={sap1}
             alt="Sáp thơm HavenAroma"
             className="about-img"
           />
           <img
-            src="https://noithatkydieu.com/wp-content/uploads/2022/10/16.jpg"
+            src={sap3}
             alt="Sáp thơm HavenAroma"
             className="about-img"
           />
           <img
-            src="https://cf.shopee.vn/file/b89b6769a2355630bb65debaad149a2c"
+            src={sap2}
             alt="Sáp thơm HavenAroma"
             className="about-img"
           />

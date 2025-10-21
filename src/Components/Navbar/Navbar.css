@@ -18,9 +18,22 @@
 }
 
 .navbar-logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #6c63ff;
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: flex-start; /* Căn trái (đổi thành center nếu muốn giữa) */
+  margin-left: 20px;
+}
+
+.navbar-home-link img {
+  height: 50px; 
+  width: auto;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.navbar-home-link img:hover {
+  transform: scale(1.5); /* Hiệu ứng phóng nhẹ khi hover */
 }
 
 .navbar-links {
