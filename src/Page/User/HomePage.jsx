@@ -2,9 +2,10 @@ import "./HomePage.css";
 import { Link } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar.jsx";
 import Footer from "../../Components/Footer/Footer.jsx";
-import sap1 from "../../assets/sappage/sap1.jpeg";
-import sap2 from "../../assets/sappage/sap2.jpeg";
-import sap3 from "../../assets/sappage/sap3.png";
+import huongcam from "../../assets/sappage/huongcam.jpg";
+import huongsen from "../../assets/sappage/huongsen.jpg";
+import huongoaihuong3 from "../../assets/sappage/huongoaihuong3.jpg";
+import combo from "../../assets/sappage/combo.jpg";
 
 const HomePage = () => {
   return (
@@ -18,7 +19,7 @@ const HomePage = () => {
         />
         <div className="hero-content">
           <h1>HavenAroma</h1>
-          <p>Hương thơm thiên nhiên cho không gian sống an yên</p>
+          <p>Gửi trọn hơi thở thiên nhiên vào không gian sống Việt</p>
           <Link to="/product">
             <button className="btn-primary">Khám phá sản phẩm</button>
           </Link>
@@ -29,17 +30,17 @@ const HomePage = () => {
       <section className="about">
         <div className="about-images">
           <img
-            src={sap1}
+            src={huongcam}
             alt="Sáp thơm HavenAroma"
             className="about-img"
           />
           <img
-            src={sap3}
+            src={huongsen}
             alt="Sáp thơm HavenAroma"
             className="about-img"
           />
           <img
-            src={sap2}
+            src={huongoaihuong3}
             alt="Sáp thơm HavenAroma"
             className="about-img"
           />
@@ -60,15 +61,15 @@ const HomePage = () => {
         <div className="product-list">
           <div className="product-card">
             <img
-              src="https://bizweb.dktcdn.net/thumb/1024x1024/100/293/212/products/yankee-hinhdaidien-sap-thom-tang-huong-04.jpg?v=1670494102317"
-              alt="Lavender Candle"
+              src={combo}
+              alt="Combo Haven Trio"
             />
-            <h3>Sáp thơm Lavender</h3>
-            <p className="price">Giá: 120.000đ</p>
+            <h3>Combo Haven Trio</h3>
+            <p className="price">Giá: 80.000đ</p>
             <button className="btn-secondary">Mua ngay</button>
           </div>
 
-          <div className="product-card">
+          {/* <div className="product-card">
             <img
               src="https://bizweb.dktcdn.net/100/293/212/products/yankee-hinhdaidien-sap-thom-tang-huong-18.jpg?v=1670493820040"
               alt="Rose Candle"
@@ -86,7 +87,7 @@ const HomePage = () => {
             <h3>Sáp thơm Vanilla</h3>
             <p className="price">Giá: 140.000đ</p>
             <button className="btn-secondary">Mua ngay</button>
-          </div>
+          </div> */}
         </div>
       </section>
 
