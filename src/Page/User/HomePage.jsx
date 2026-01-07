@@ -34,6 +34,36 @@ const HomePage = () => {
     };
     // eslint-disable-next-line
   }, []);
+  // Hiệu ứng hiện ra khi cuộn cho các section
+  const aboutRef = useRef(null);
+  const productsRef = useRef(null);
+  const promoRef = useRef(null);
+  const [aboutVisible, setAboutVisible] = useState(false);
+  const [productsVisible, setProductsVisible] = useState(false);
+  const [promoVisible, setPromoVisible] = useState(false);
+
+  useEffect(() => {
+    const handleObserver = (ref, setVisible) => {
+      if (!ref.current) return;
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setVisible(true);
+        },
+        { threshold: 0.15 }
+      );
+      observer.observe(ref.current);
+      return observer;
+    };
+    const obs1 = handleObserver(aboutRef, setAboutVisible);
+    const obs2 = handleObserver(productsRef, setProductsVisible);
+    const obs3 = handleObserver(promoRef, setPromoVisible);
+    return () => {
+      if (obs1 && aboutRef.current) obs1.disconnect();
+      if (obs2 && productsRef.current) obs2.disconnect();
+      if (obs3 && promoRef.current) obs3.disconnect();
+    };
+  }, []);
+
   return (
     <div className="homepage modern-font">
       <Navbar />
@@ -97,7 +127,7 @@ const HomePage = () => {
       </section>
 
       {/* About Section */}
-      <section className="about modern-section">
+      <section ref={aboutRef} className={`about modern-section fade-in-section${aboutVisible ? ' visible' : ''}`}>
         <div className="about-images">
           <img src={huongcam} alt="Sáp thơm Cam Ngọt" className="about-img shadow-img" />
           <img src={huongsen} alt="Sáp thơm Sen Hồng" className="about-img shadow-img" />
@@ -119,7 +149,7 @@ const HomePage = () => {
       </section>
 
       {/* Products */}
-      <section className="products modern-section">
+      <section ref={productsRef} className={`products modern-section fade-in-section${productsVisible ? ' visible' : ''}`}>
         <h2 className="section-title">Sản phẩm nổi bật</h2>
         <div className="product-list">
           <div className="product-card modern-card">
@@ -132,7 +162,7 @@ const HomePage = () => {
       </section>
 
       {/* Promotion */}
-      <section className="promotion modern-section">
+      <section ref={promoRef} className={`promotion modern-section fade-in-section${promoVisible ? ' visible' : ''}`}>
         <h2 className="section-title">Ưu đãi đặc biệt</h2>
         <p>Giảm 20% cho đơn hàng đầu tiên – Nhanh tay kẻo lỡ!</p>
         <button className="btn-primary gradient-btn">Nhận ưu đãi</button>

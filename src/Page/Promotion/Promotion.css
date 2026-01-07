@@ -1,0 +1,101 @@
+.promotion-page {
+  background: linear-gradient(120deg, #f7f7ff, #eef2ff);
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.promotion-title {
+  font-size: 2.4rem;
+  color: #6c63ff;
+  margin-bottom: 0.5rem;
+}
+
+.promotion-sub {
+  color: #555;
+  margin-bottom: 2.5rem;
+}
+
+.promotion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.promotion-card {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 8px 30px rgba(108, 99, 255, 0.15);
+  overflow: hidden;
+  transition: transform 0.25s;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.promotion-card:hover {
+  transform: translateY(-6px);
+}
+
+.promotion-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.promotion-info {
+  padding: 1.5rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* quan trọng */
+}
+
+.combo-desc {
+  color: #666;
+  min-height: 48px;   /* đủ cho 2 dòng */
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.combo-content {
+  min-height: 120px; /* 🔥 CHÌA KHÓA */
+}
+
+.promotion-info ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.promotion-info li {
+  margin-bottom: 6px;
+}
+
+.combo-price {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.combo-price .old {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.combo-price .new {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.btn-primary {
+  margin-top: auto;
+  border: none;
+  border-radius: 24px;
+  padding: 10px 26px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}

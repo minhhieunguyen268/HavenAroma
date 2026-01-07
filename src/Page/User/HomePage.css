@@ -1,3 +1,15 @@
+/* Fade-in effect for scroll sections */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(.77,0,.18,1), transform 0.8s cubic-bezier(.77,0,.18,1);
+  will-change: opacity, transform;
+}
+.fade-in-section.visible {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
 /* HERO SLIDER TRACK */
 .hero-slider-track {
   display: flex;

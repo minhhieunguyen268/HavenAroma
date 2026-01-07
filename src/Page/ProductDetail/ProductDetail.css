@@ -1,0 +1,91 @@
+.product-detail-page {
+  height: 100vh;
+  background: linear-gradient(120deg, #f7f7ff 0%, #e0e7ff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-detail-card {
+  position: relative;
+  background: #fff;
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  padding: 3rem 2.5rem;
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.exit-btn {
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  background: #fff;
+  border: 1.5px solid #6c63ff;
+  color: #6c63ff;
+  border-radius: 18px;
+  padding: 6px 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.product-detail-img {
+  width: 220px;
+  height: 220px;
+  border-radius: 1.5rem;
+  object-fit: cover;
+}
+
+.product-detail-info {
+  flex: 1;
+}
+
+.product-tagline {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.product-detail-price {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.product-benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.product-benefits div {
+  background: #f3f3ff;
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+}
+
+.product-specs {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.4rem;
+}
+
+.product-specs li {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.btn-primary {
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+}

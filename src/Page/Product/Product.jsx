@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import huongcam from "../../assets/sappage/huongcam.jpg";
 import huongsen from "../../assets/sappage/huongsen.jpg";
 import huongoaihuong3 from "../../assets/sappage/huongoaihuong3.jpg";
@@ -6,18 +7,6 @@ import huongoaihuong3 from "../../assets/sappage/huongoaihuong3.jpg";
 import "./Product.css";
 import Navbar from "../../Components/Navbar/Navbar.jsx"; 
 
-// const allProducts = [
-//   { id: 1, name: "Sáp thơm Lavender", price: "120.000₫", img: sp1 },
-//   { id: 2, name: "Sáp thơm Cam Ngọt", price: "110.000₫", img: sp2 },
-//   { id: 3, name: "Sáp thơm Bạc Hà", price: "130.000₫", img: sp3 },
-//   { id: 4, name: "Sáp thơm Hoa Nhài", price: "125.000₫", img: sp4 },
-//   { id: 5, name: "Sáp thơm Oải Hương", price: "115.000₫", img: sp5 },
-//   { id: 6, name: "Sáp thơm Gỗ Trầm", price: "140.000₫", img: sp6 },
-//   { id: 7, name: "Sáp thơm Hồng Nhung", price: "135.000₫", img: sp7 },
-//   { id: 8, name: "Sáp thơm Biển Xanh", price: "128.000₫", img: sp8 },
-//   { id: 9, name: "Sáp thơm Chanh Tươi", price: "118.000₫", img: sp9 },
-//   { id: 10, name: "Sáp thơm Dâu Tây", price: "132.000₫", img: sp10 },
-// ];
 
 const newProducts = [
   { id: 1, name: "Sáp thơm Oải Hương", price: "29.000₫", img: huongoaihuong3 },
@@ -28,12 +17,20 @@ const newProducts = [
 const Product = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 8;
+  const navigate = useNavigate();
 
   const indexOfLast = currentPage * productsPerPage;
   const indexOfFirst = indexOfLast - productsPerPage;
   const currentProducts = newProducts.slice(indexOfFirst, indexOfLast);
 
   const totalPages = Math.ceil(newProducts.length / productsPerPage);
+
+  const handleDetail = (id) => {
+    if (id === 1) navigate("/product/oaihuong");
+    // Có thể mở rộng cho các sản phẩm khác
+    if (id === 2) navigate("/product/camngot");
+    if (id === 3) navigate("/product/senhong");
+  };
 
   return (
     <>
@@ -50,7 +47,7 @@ const Product = () => {
             <div className="product-info">
               <h3 className="product-name">{item.name}</h3>
               <p className="product-price">{item.price}</p>
-              <button className="product-btn">👆 Thông tin chi tiết</button>
+              <button className="product-btn" onClick={() => handleDetail(item.id)}>👆 Thông tin chi tiết</button>
             </div>
           </div>
         ))}
